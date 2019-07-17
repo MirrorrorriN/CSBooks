@@ -65,8 +65,13 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'CSBooks.pipelines.CsbooksPipeline': 300,
+   # 'CSBooks.pipelines.CsbooksPipeline': 300,
+   'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 100
 }
+ELASTICSEARCH_SERVERS = ['127.0.0.1:9200']
+ELASTICSEARCH_INDEX = 'douban'
+ELASTICSEARCH_TYPE = 'book'
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
