@@ -12,7 +12,7 @@ class CSBookSpider(scrapy.Spider):
     name = "CSBooks"
     allowed_domains = ["douban.com"]
     start_urls = (
-        'https://book.douban.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA?start=0&type=T',
+        'https://book.douban.com/tag/%E6%8E%A8%E7%90%86?start=0&type=T',
     )
 
     # def start_requests(self):
@@ -33,6 +33,7 @@ class CSBookSpider(scrapy.Spider):
                 item['title']=title
             if score:
                 item['score']=score
+            item['tag']='推理'
             yield item
 
         nextPage=tmp.xpath('./div[@class="paginator"]/span[@class="next"]/a/@href').extract_first()

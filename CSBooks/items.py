@@ -13,4 +13,5 @@ class CsbooksItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     score = scrapy.Field()
+    tag = scrapy.Field()
     pass
